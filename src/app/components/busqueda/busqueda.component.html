@@ -1,0 +1,22 @@
+<h1>Busqueda: <small> {{busqueda}}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="soldiers.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No exiten resultados con el criterio de búsqueda: {{busqueda}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let soldier of soldiers; let i= index">
+        <img [src]="soldier.img" class="card-img-top" [alt]="soldier.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{soldier.nombre}}</h5>
+            <p class="card-text">{{soldier.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{soldier.aparicion}}</small></p>
+            <button (click)="verDetalle(i)" type="button" class="btn btn-outline-primary btn-block">Show more</button>
+            <!-- <a [routerLink]="['/detalles', i]" class="btn btn-outline-primary">detalles</a> -->
+        </div>
+    </div>
