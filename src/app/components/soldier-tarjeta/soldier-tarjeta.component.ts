@@ -10,19 +10,19 @@ export class SoldierTarjetaComponent implements OnInit {
 
   @Input() soldier: any= {};
   @Input() index: number;
-  @Output() verMas: EventEmitter<number>;
+ /*  @Output() verMas: EventEmitter<number>; */
 
   constructor(private router: Router) { 
-    this.verMas= new EventEmitter();
+    /* this.verMas= new EventEmitter(); */
   }
 
   ngOnInit(): void {
   }
 
   verDetalle(){
-   /*  console.log(this.index);
-    this.router.navigate( ['/detalles', this.index]); */
-    this.verMas.emit( this.index);
+   /*  console.log(this.index);*/
+    this.router.navigate( ['/detalles', this.index]); 
+   /*  this.verMas.emit( this.index); */
   }
 
 }

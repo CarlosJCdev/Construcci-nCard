@@ -71,7 +71,9 @@ export class SoldierService{
       //Al parametro busqueda aplico un pipe para que el dato sea en mayusculas
       busqueda= busqueda.toLowerCase();
       //Aplico un ciclo for, para iterar los elementos del arreglo uno a uno
-        for(let soldier of this.soldiers){
+        /* for(let soldier of this.soldiers){ */
+          for(let i=0; i < this.soldiers.length; i++){
+            let soldier= this.soldiers[i];
           // y de cada elemento se extraera el nombre para la busqueda, ademas de comparar el dato en minuscula
           let nombre= soldier.nombre.toLowerCase();
           //Aplico una validación en donde valida si el nombre coincide con la busqueda
@@ -79,6 +81,7 @@ export class SoldierService{
           //Por tanto si el valor es mayor o igula a 0, encontro un elemento
             if( nombre.indexOf(busqueda) >= 0){
               //Y por ende, si encontro una coincidencia agrego el valor al arrego soldierArr
+              soldier.id= i;
               soldierArr.push( soldier )
             }
         }
@@ -92,4 +95,5 @@ export interface soldier{
     img: string;
     aparicion: string;
     casa: string;
+    id?: number;
 }

@@ -10,5 +10,5 @@
 </div>
 
 <div class="card-columns">
-    <app-soldier-tarjeta [soldier]="soldier" [index]="i" *ngFor="let soldier of soldiers; let i= index"></app-soldier-tarjeta>
+    <app-soldier-tarjeta [soldier]="soldier" [index]="soldier.id" *ngFor="let soldier of soldiers"></app-soldier-tarjeta>
 </div>
