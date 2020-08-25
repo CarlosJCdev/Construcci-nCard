@@ -22,7 +22,8 @@ export class BusquedaComponent implements OnInit {
       console.log(this.soldiers);
     });
   }
-  verDetalle(id: number){
+  //Ya no necesito este método, ya que con @Input, me trae esa funcionalidad desde el soldier-tarjeta 
+ /*  verDetalle(id: number){
     this.router.navigate( ['/detalles', id]);
-  }
+  } */
 }

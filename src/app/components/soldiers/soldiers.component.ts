@@ -14,8 +14,9 @@ export class SoldiersComponent implements OnInit {
   ngOnInit(): void {
 
     this.soldiers= this._soldierService.getSoldiers();
-    console.log(this.soldiers);
+    /* console.log(this.soldiers); */
   }
+ 
   verDetalle(id: number){
     this.router.navigate( ['/detalles', id]);
   }

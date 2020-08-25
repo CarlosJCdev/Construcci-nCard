@@ -1,1 +1,11 @@
-<p>soldier-tarjeta works!</p>
+<div class="card animated fadeIn fast">
+    <img [src]="soldier.img" class="card-img-top" [alt]="soldier.nombre">
+    <div class="card-body">
+        <h5 class="card-title">{{soldier.nombre}}</h5>
+        <p class="card-text">{{soldier.bio}}</p>
+        <p class="card-text"><small class="text-muted">{{soldier.aparicion}}</small></p>
+        <button (click)="verDetalle()" type="button" class="btn btn-outline-primary btn-block">
+            Show more</button>
+        <!-- <a [routerLink]="['/detalles', i]" class="btn btn-outline-primary">detalles</a> -->
+    </div>
+</div>

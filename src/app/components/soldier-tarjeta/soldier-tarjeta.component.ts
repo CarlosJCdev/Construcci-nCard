@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-soldier-tarjeta',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoldierTarjetaComponent implements OnInit {
 
-  constructor() { }
+  @Input() soldier: any= {};
+  @Input() index: number;
+  @Output() verMas: EventEmitter<number>;
+
+  constructor(private router: Router) { 
+    this.verMas= new EventEmitter();
+  }
 
   ngOnInit(): void {
+  }
+
+  verDetalle(){
+   /*  console.log(this.index);
+    this.router.navigate( ['/detalles', this.index]); */
+    this.verMas.emit( this.index);
   }
 
 }
